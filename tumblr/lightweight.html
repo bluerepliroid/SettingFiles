@@ -463,6 +463,8 @@
                             {block:AskEnabled}<li class="ask"><a href="/ask" class="page">{AskLabel}</a></li>{/block:AskEnabled}
                             {block:SubmissionsEnabled}<li class="submit"><a href="/submit" class="page">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
                             <li class="mobile"><a href="/mobile">Mobile</a></li>
+                            <li class="archive"><a href="/archive">Archive</a></li>
+                            <li class="random"><a href="/random">Random</a></li>
                             <li class="rss"><a href="{RSS}">RSS</a></li>
                         </ul>
                     </div><!-- #pages -->
@@ -575,8 +577,6 @@
                 {/block:Posts}
                 {block:Pagination}
                     <div class="pagination">
-                        <span class="archive"><a href="/archive">Archive</a></span>
-                        <span class="random"><a href="/random">Random</a></span>
                         {block:NextPage}<span class="next-page"><a href="{NextPage}">Next Page</a></span>{/block:NextPage}
                         <span class="page-number">Page {CurrentPage} of {TotalPages}</span>
                         {block:PreviousPage}<span class="previous-page"><a href="{PreviousPage}">Previous Page</a></span>{/block:PreviousPage}
