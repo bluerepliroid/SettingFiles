@@ -1,0 +1,55 @@
+# Attribute codes: 
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+NORMAL 00	# global default, although everything should be something.
+FILE 00 	# normal file
+DIR 01;34 	# directory
+LINK 01;36 	# symbolic link
+FIFO 01;33	# pipe
+SOCK 01;35	# socket
+BLK 01;33	# block device driver
+CHR 01;33 	# character device driver
+
+# List any file extensions like '.gz' or '.tar' that you would like ls
+# to colorize below. Put the extension, a space, and the color init string.
+# (and any comments you want to add after a '#')
+# source files (bold)
+.f    01
+.c    01
+.cpp  01
+.h    01
+.tex  01
+.html 01
+.htm  01
+# executables (bright green)
+.elf  01;32
+.cmd  01;32
+.exe  01;32
+.com  01;32
+.bat  01;32
+# archives or compressed (bright red)
+.tar  01;31
+.tgz  01;31
+.taz  01;31
+.lzh  01;31
+.zip  01;31
+.z    01;31
+.Z    01;31
+.gz   01;31
+.bz2  01;31
+.rpm  01;31
+.deb  01;31
+# image formats (magenta)
+.jpg  01;35
+.png  01;35
+.gif  01;35
+.bmp  01;35
+.xpm  01;35
+.tif  01;35
+.ps   01;35
+.eps  01;35
+.pdf  01;35
+.dvi  01;35

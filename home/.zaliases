@@ -1,0 +1,30 @@
+## common aliases
+alias ls='ls -F --color'
+alias la='ls -la -h'
+alias less='less -i'
+alias lv='lv -i'
+alias mv='nocorrect mv -i'
+alias cp='nocorrect cp -i'
+alias mkdir='nocorrect mkdir -m 755'
+alias rm='rm -i'
+alias diff='LANG=C diff -u'
+alias grep='grep --color'
+alias egrep='egrep --color'
+alias e='emacsclient -n'
+alias valgrind='valgrind -v --num-callers=100 --leak-check=yes --show-reachable=yes --tool=memcheck'
+
+## aliases with one character
+alias -g O="2>&1"
+alias -g NS=">/dev/null"  # throw away stdout
+alias -g NE="2>/dev/null" # throw away stderr
+alias -g NB=">&/dev/null" # throw away both stdout and stderr
+
+alias -g M='| more'
+alias -g L="| less"
+alias -g H="| head"
+alias -g T="| tail"
+
+alias -g N='| nkf'
+alias -g D='| diff'
+alias -g G="| grep"
+alias -g GT="| grep ' T '"
