@@ -139,3 +139,10 @@
              ))
 ;; コメント開始文字
 (setq asm-comment-char ?#)
+
+;; makefile-gmake-mode
+(setq auto-mode-alist
+      (append
+       '(("\\.mk$" . makefile-gmake-mode))
+       '(("[Mm]akefile*$" . makefile-gmake-mode))
+       auto-mode-alist))
