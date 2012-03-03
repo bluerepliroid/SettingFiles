@@ -146,3 +146,31 @@
        '(("\\.mk$" . makefile-gmake-mode))
        '(("[Mm]akefile*$" . makefile-gmake-mode))
        auto-mode-alist))
+
+
+; global key の設定
+
+(global-set-key "\M-p" 'backward-paragraph)
+(global-set-key "\M-n" 'forward-paragraph)
+(global-set-key [delete] 'delete-char)
+(global-set-key "\C-h" 'delete-backward-char)
+(defun kill-line-twice (&optional numlines)
+  "Acts like normal kill except kills entire line if at beginning"
+  (interactive "p")
+  (cond ((or (= (current-column) 0)
+             (> numlines 1))
+         (kill-line numlines))
+        (t (kill-line))))
+(global-set-key "\C-k" 'kill-line-twice)
+(global-set-key "\C-x\C-d" nil)
+(global-set-key "\C-u" nil)
+
+(global-set-key "\M-s" 'delete-trailing-whitespace)
+(global-set-key "\M-r" 'replace-string)
+(global-set-key "\M-\C-r" 'query-replace)
+(global-set-key "\C-x\C-q" 'toggle-read-only)
+(global-set-key "\M-g" 'goto-line)
+(global-set-key "\C-c\C-c" 'comment-region)
+(global-set-key "\C-u\C-c" 'uncomment-region)
+(global-set-key "\M-?" 'help-for-help)
+(global-set-key "\C-x\C-e" 'eval-buffer)
