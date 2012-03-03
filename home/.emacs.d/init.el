@@ -6,7 +6,7 @@
                         load-path))
 
 
-; 一般的な設定
+; 起動時の設定
 
 ;; emacsclient からのファイルオープンを受け付ける
 (server-start)
@@ -155,7 +155,7 @@
 (global-set-key [delete] 'delete-char)
 (global-set-key "\C-h" 'delete-backward-char)
 (defun kill-line-twice (&optional numlines)
-  "Acts like normal kill except kills entire line if at beginning"
+  "Acts like normal kill except kills entire line if at beginning."
   (interactive "p")
   (cond ((or (= (current-column) 0)
              (> numlines 1))
@@ -174,3 +174,31 @@
 (global-set-key "\C-u\C-c" 'uncomment-region)
 (global-set-key "\M-?" 'help-for-help)
 (global-set-key "\C-x\C-e" 'eval-buffer)
+
+
+; 一般的な設定
+
+;; tab ではなく space を使う
+(setq-default indent-tabs-mode nil)
+;; tab 幅を 4 に設定
+(setq-default tab-width 4)
+;; バッファの最後の行で next-line しても新しい行を作らない
+(setq next-line-add-newlines nil)
+;; narrowing を禁止
+(put 'narrow-to-region 'disabled nil)
+;; スクロールステップを 1 に設定
+(setq scroll-step 1)
+;; マウスホイールでスクロール
+(defun scroll-down-with-lines ()
+  "Scroll down by multiple lines."
+  (interactive)
+  (scroll-down 5))
+(defun scroll-up-with-lines ()
+  "Scroll up by multiple lines."
+  (interactive)
+  (scroll-up 5))
+(global-set-key [mouse-4] 'scroll-down-with-lines)
+(global-set-key [mouse-5] 'scroll-up-with-lines)
+;; マウスカーソルがあるバッファをスクロール
+(mwheel-install)
+(setq mouse-wheel-follow-mouse t)
