@@ -18,3 +18,10 @@
 (setq message-log-max nil)
 ;; バックアップファイルが生成されないようにする
 (setq backup-inhibited t)
+
+
+; 言語の設定
+
+;; 日本語表示の設定
+(set-language-environment 'Japanese)
+(prefer-coding-system 'utf-8)
