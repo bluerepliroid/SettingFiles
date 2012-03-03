@@ -103,10 +103,28 @@
 
 ; 各種 mode の設定
 
-;; text mode
+;; text-mode
 (add-hook 'text-mode-hook
           '(lambda ()
              (progn
                ;; 整形時の列数
                (set-fill-column 76)
                )))
+
+;; c-mode, c++-mode
+(add-hook 'c-mode-common-hook
+          '(lambda ()
+             ;;; K&R のスタイルを使う
+             (c-set-style "k&r")
+             ;;; インデントには tab を使う
+             (setq indent-tabs-mode t)
+             ;;; インデント幅
+             (setq c-basic-offset 4)
+             ))
+(setq auto-mode-alist
+      (append
+       '(("\\.c$" . c-mode))
+       '(("\\.h$" . c++-mode))
+       '(("\\.cpp$" . c++-mode))
+       '(("\\.hpp$" . c++-mode))
+       auto-mode-alist))
