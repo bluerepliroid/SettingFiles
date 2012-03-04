@@ -6,7 +6,7 @@ export LANG=ja_JP.UTF-8
 export USER=$USERNAME
 export HOSTNAME=$HOST
 ## history
-export HISTFILE=${HOME}/.zsh_history
+export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=50000
 export SAVEHIST=50000
 ## EDITOR
