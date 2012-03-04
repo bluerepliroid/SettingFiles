@@ -186,6 +186,9 @@
 (setq next-line-add-newlines nil)
 ;; narrowing を禁止
 (put 'narrow-to-region 'disabled nil)
+;; upcase/downcase-region 禁止を無効にする
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 ;; スクロールステップを 1 に設定
 (setq scroll-step 1)
