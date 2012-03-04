@@ -202,3 +202,12 @@
 ;; マウスカーソルがあるバッファをスクロール
 (mwheel-install)
 (setq mouse-wheel-follow-mouse t)
+
+
+; その他の emacs-lisp の設定
+
+;; undo
+(global-set-key "\C-z" 'undo)
+;; redo: undo のキャンセル
+(require 'redo)
+(global-set-key "\M-z" 'redo)
