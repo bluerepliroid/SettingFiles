@@ -257,3 +257,13 @@
       (iswitchb-visit-buffer
        (get-buffer (car iswitchb-matches))))
     (select-window (minibuffer-window))))
+
+;; mcomplete: mini-buffer で容易に補完
+;; mini-buffer 入力中で C-s or C-r
+;; さらに C-p or C-n で Prefix/Substring match の切り換え
+(require 'mcomplete)
+;; mcomplete-history: mcomplete 補完の履歴から候補を絞る
+;; C-p or C-n で History match に切り換え可能
+(require 'cl)
+(load "mcomplete-history")
+(turn-on-mcomplete-mode)
