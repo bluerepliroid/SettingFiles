@@ -186,6 +186,7 @@
 (setq next-line-add-newlines nil)
 ;; narrowing を禁止
 (put 'narrow-to-region 'disabled nil)
+
 ;; スクロールステップを 1 に設定
 (setq scroll-step 1)
 ;; マウスホイールでスクロール
@@ -201,6 +202,10 @@
 (global-set-key [mouse-5] 'scroll-up-with-lines)
 ;; マウスカーソルがあるバッファをスクロール
 (setq mouse-wheel-follow-mouse t)
+
+;; recentf-mode: 最近開いたファイルを一覧から選択
+(recentf-mode 1)
+(global-set-key "\C-xf" 'recentf-open-files)
 
 
 ; その他の emacs-lisp の設定
