@@ -275,3 +275,34 @@
 (require 'cl)
 (load "mcomplete-history")
 (turn-on-mcomplete-mode)
+
+;; ibuffer: buffer-list の機能強化
+(require 'ibuffer)
+;; ibuffer 中に表示しないバッファを指定する
+(setq ibuffer-never-show-regexps '("scratch" "messages"))
+;; ibuffer 中で buffer のスクロールを可能にする
+(defun ibuffer-visit-buffer-other-window-scroll (&optional down)
+  (interactive)
+  (let ((buf (ibuffer-current-buffer)))
+    (unless (buffer-live-p buf)
+      (error "Buffer %s has been killed!" buf))
+    (if (string=
+         (buffer-name (window-buffer (next-window)))
+         (buffer-name buf))
+        (if down
+            (scroll-other-window-down nil)
+          (scroll-other-window))
+      (ibuffer-visit-buffer-other-window-noselect))))
+(defun ibuffer-visit-buffer-other-window-scroll-down ()
+  (interactive)
+  (ibuffer-visit-buffer-other-window-scroll t))
+(define-key ibuffer-mode-map " " 'ibuffer-visit-buffer-other-window-scroll)
+(define-key ibuffer-mode-map "b" 'ibuffer-visit-buffer-other-window-scroll-down)
+;; n, p で次 (前) のバッファの内容を表示する
+(defadvice ibuffer-forward-line
+  (after ibuffer-scroll-page activate)
+  (ibuffer-visit-buffer-other-window-scroll))
+(defadvice ibuffer-backward-line
+  (after ibuffer-scroll-page-down activate)
+  (ibuffer-visit-buffer-other-window-scroll-down))
+(global-set-key "\C-x\C-b" 'ibuffer)
