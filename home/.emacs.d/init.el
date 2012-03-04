@@ -200,7 +200,6 @@
 (global-set-key [mouse-4] 'scroll-down-with-lines)
 (global-set-key [mouse-5] 'scroll-up-with-lines)
 ;; マウスカーソルがあるバッファをスクロール
-(mwheel-install)
 (setq mouse-wheel-follow-mouse t)
 
 
