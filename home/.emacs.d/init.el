@@ -211,3 +211,10 @@
 ;; redo: undo のキャンセル
 (require 'redo)
 (global-set-key "\M-z" 'redo)
+
+;; browse-yank: 過去の kill-ring の内容を表示しながら貼付
+;; p: previous
+;; n: next
+;; i: insert
+(require 'browse-yank)
+(global-set-key "\M-y" 'browse-yank)
