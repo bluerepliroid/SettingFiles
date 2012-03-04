@@ -237,3 +237,23 @@
 (setq migemo-message-prefix-face 'migemo-message-prefix)
 (migemo-init)                              ; 初期化
 (set-process-query-on-exit-flag migemo-process nil)
+
+;; iswitchb: buffer をより容易に切り換え
+;; C-x b でバッファ検索中 C-s or C-r
+(iswitchb-mode 1)
+(iswitchb-default-keybindings)
+;; バッファを表示させながら切り換え候補を検索
+(defadvice iswitchb-exhibit
+  (after
+   iswitchb-exhibit-with-display-buffer
+   activate)
+  "Display the selected buffer in the window."
+  (when (and
+         (eq iswitchb-method iswitchb-default-method)
+         iswitchb-matches)
+    (select-window
+     (get-buffer-window (cadr (buffer-list))))
+    (let ((iswitchb-method 'samewindow))
+      (iswitchb-visit-buffer
+       (get-buffer (car iswitchb-matches))))
+    (select-window (minibuffer-window))))
