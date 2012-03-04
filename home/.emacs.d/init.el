@@ -217,3 +217,23 @@
 ;; i: insert
 (require 'browse-yank)
 (global-set-key "\M-y" 'browse-yank)
+
+;; migemo: 日本語検索
+;; C-s, C-r: migemo isearch
+;; C-u C-s, C-u C-r: isearch
+(require 'migemo)
+(setq migemo-command "cmigemo")
+(setq migemo-options '("-q" "--emacs"))
+(setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+(setq migemo-user-dictionary nil)
+(setq migemo-regex-dictionary nil)
+(setq migemo-coding-system 'utf-8-unix)
+(setq migemo-use-pattern-alist t)          ; キャッシュを利用
+(setq migemo-use-frequent-pattern-alist t) ; 頻出パターンをキャッシュ
+(setq migemo-pattern-alist-length 1000)    ; 履歴の数
+(make-face 'migemo-message-prefix)         ; prefix の色
+(face-spec-set 'migemo-message-prefix
+               '((t (:foreground "gray"))))
+(setq migemo-message-prefix-face 'migemo-message-prefix)
+(migemo-init)                              ; 初期化
+(set-process-query-on-exit-flag migemo-process nil)
