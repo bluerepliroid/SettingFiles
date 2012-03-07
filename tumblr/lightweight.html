@@ -118,8 +118,9 @@
     }
     #pages li {
         float: left;
-        margin-right: 10px;
+        margin: 0 5px;
         padding: 3px 0;
+        font-weight: bold;
     }
     #pages li.rss {
         margin-right: 0;
@@ -131,7 +132,7 @@
     #search {
         display: block;
         float: right;
-        width: 205px;
+        width: 145px;
     }
     #search input {
         background: none;
@@ -144,13 +145,8 @@
         height: 15px;
         padding: 4px;
         width: 130px;
-    }
-    #search input.search-submit {
-        color: #555;
-        float: right;
-        height: 25px;
-        padding: 3px;
-        width: 60px;
+        color: #999;
+        font-weight: bold;
     }
     .post {
         border-top: 1px solid #ccc;
@@ -470,8 +466,7 @@
                     </div><!-- #pages -->
                     <div id="search">
                         <form action="/search" method="get">
-                            <input type="text" name="q" value="{SearchQuery}" class="search-text" />
-                            <input type="submit" value="Search" class="search-submit" />
+                            <input type="text" name="q" value="Search" onfocus="jQuery(this).val('');" onblur="jQuery(this).val('Search');" class="search-text" />
                         </form>
                     </div><!-- #search -->
                 </div><!-- .menu -->
