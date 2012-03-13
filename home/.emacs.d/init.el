@@ -81,10 +81,10 @@
 ;; region
 (transient-mark-mode t)
 (set-face-background 'region "cornflower blue")
-(set-face-foreground 'region "snow")
+(set-face-foreground 'region "white")
 ;; modeline
 (set-face-background 'modeline "dark slate gray")
-(set-face-foreground 'modeline "snow")
+(set-face-foreground 'modeline "white")
 (set-face-bold-p 'modeline nil)
 ;; comment
 (set-face-foreground 'font-lock-comment-face "MediumPurple1")
