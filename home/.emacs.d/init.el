@@ -144,7 +144,7 @@
 (setq auto-mode-alist
       (append
        '(("\\.mk$" . makefile-gmake-mode))
-       '(("[Mm]akefile*$" . makefile-gmake-mode))
+       '(("[Mm]akefile.*$" . makefile-gmake-mode))
        auto-mode-alist))
 
 
