@@ -1,5 +1,5 @@
 ## common aliases
-alias ls='ls -F --color'
+alias ls="ls -F --color --time-style=+'%Y-%m-%d %H:%M'"
 alias la='ls -la -h'
 alias less='less -i'
 alias lv='lv -i'
