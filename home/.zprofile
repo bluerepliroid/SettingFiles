@@ -17,7 +17,7 @@ if ( which $editor >& /dev/null ) then
 fi
 end
 ## PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH:/usr/X11R6/bin:/sbin:/usr/sbin:$HOME/bin
+export PATH=/opt/local/libexec/gnubin:/opt/local/bin:$PATH:$HOME/bin
 ## MANPATH
 export MANPATH=/opt/local/man:$MANPATH:/usr/man:/usr/local/man
 
