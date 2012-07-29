@@ -17,9 +17,9 @@ if ( which $editor >& /dev/null ) then
 fi
 end
 ## PATH
-export PATH=/opt/local/libexec/gnubin:/opt/local/bin:$PATH:$HOME/bin
+export PATH=`brew --prefix coreutils`/libexec/gnubin:`brew --prefix`/bin:$PATH:$HOME/bin
 ## MANPATH
-export MANPATH=/opt/local/man:$MANPATH:/usr/man:/usr/local/man
+export MANPATH=$MANPATH:/usr/man:/usr/local/man
 
 ## ls の表示色
 if ( which dircolors >& /dev/null ) then
