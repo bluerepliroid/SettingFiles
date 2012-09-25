@@ -147,6 +147,14 @@
        '(("[Mm]akefile.*$" . makefile-gmake-mode))
        auto-mode-alist))
 
+;; cmake-mode
+(require 'cmake-mode)
+(setq auto-mode-alist
+      (append
+       '(("\\.cmake$" . cmake-mode))
+       '(("CMakeLists.txt" . cmake-mode))
+       auto-mode-alist))
+
 
 ; global key の設定
 
