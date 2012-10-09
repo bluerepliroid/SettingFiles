@@ -155,6 +155,13 @@
        '(("CMakeLists.txt" . cmake-mode))
        auto-mode-alist))
 
+;; bat-mode
+(setq auto-mode-alist
+      (append
+       '(("\\.bat$" . bat-mode))
+       auto-mode-alist))
+(autoload 'bat-mode "bat-mode" "DOS and Windows BAT files" t)
+
 
 ; global key の設定
 
