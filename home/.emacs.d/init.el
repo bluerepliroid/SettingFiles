@@ -71,7 +71,7 @@
        (scroll-bar-mode -1)
        ))
 
-;; 行番号・桁番号を modeline に表示する
+;; 行番号・桁番号を mode-line に表示する
 (line-number-mode t)   ; 行番号
 (column-number-mode t) ; 桁番号
 
@@ -82,10 +82,10 @@
 (transient-mark-mode t)
 (set-face-background 'region "cornflower blue")
 (set-face-foreground 'region "white")
-;; modeline
-(set-face-background 'modeline "dark slate gray")
-(set-face-foreground 'modeline "white")
-(set-face-bold-p 'modeline nil)
+;; mode-line
+(set-face-background 'mode-line "dark slate gray")
+(set-face-foreground 'mode-line "white")
+(set-face-bold-p 'mode-line nil)
 ;; comment
 (set-face-foreground 'font-lock-comment-face "MediumPurple1")
 
