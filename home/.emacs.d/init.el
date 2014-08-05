@@ -140,6 +140,17 @@
 ;; コメント開始文字
 (setq asm-comment-char ?#)
 
+;; python-mode
+(add-hook 'python-mode-hook
+          '(lambda ()
+             ;; インデントには tab を使う
+             (setq indent-tabs-mode t)
+             ;; インデント幅
+             (setq indent-level 4)
+             (setq python-indent 4)
+             (setq tab-width 4)
+             ))
+
 ;; makefile-gmake-mode
 (setq auto-mode-alist
       (append
