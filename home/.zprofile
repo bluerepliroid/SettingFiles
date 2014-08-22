@@ -32,3 +32,5 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zmodload -ui complist
 
 sh -c "rm -f ~/.zsh_history.* 2> /dev/null"
+
+eval `ssh-agent`
