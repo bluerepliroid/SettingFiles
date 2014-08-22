@@ -13,6 +13,8 @@ PROMPT='%{[1m%}$USER@$HOST:%4~%(!.#.$)%{[m%} '
 ### emacs
 bindkey -e
 
+bindkey "^[[3~" delete-char
+
 ## コマンド入力補完
 autoload -U compinit
 compinit
@@ -51,13 +53,6 @@ setopt auto_menu
 setopt auto_param_keys
 setopt no_list_ambiguous
 
-## cd を省略
-setopt auto_cd
-## >  で上書きしない
-## >! で強制上書き
-#setopt no_clobber
-## 「#」「~」「^」を特殊文字として使用
-setopt extended_glob
 ## rm で * を使う際に聞き返してこない
 setopt rm_star_silent
 
@@ -68,10 +63,10 @@ setopt sh_word_split
 
 ## cd コマンドで自動的に pushd する
 setopt auto_pushd
+## pushd でスタックの内容を表示しない
+setopt pushd_silent
 ## pushd の重複を防ぐ
 setopt pushd_ignore_dups 
-## popd でスタックの内容を表示しない
-#setopt pushd_silent
 
 ## 親プロセスが死んでも子プロセスが死なない
 setopt nohup
