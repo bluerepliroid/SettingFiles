@@ -60,7 +60,7 @@
               default-frame-alist))
 
 ;; cursor を点滅させない
-(blink-cursor-mode nil)
+(blink-cursor-mode 0)
 
 ;; menu bar を表示させない
 (menu-bar-mode -1)
