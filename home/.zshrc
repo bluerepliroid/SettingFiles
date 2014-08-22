@@ -9,6 +9,16 @@ setopt prompt_subst
 HOST=`hostname -s`
 PROMPT='%{[1m%}$USER@$HOST:%4~%(!.#.$)%{[m%} '
 
+## ls の表示色
+if ( which dircolors >& /dev/null ) then
+    eval `dircolors --sh ~/.dircolors`
+    export LS_COLORS="${LS_COLORS}:*~=01;42:*#=01;42:*%=01;42"
+fi
+export ZLS_COLORS=$LS_COLORS
+## 補完候補を色付け
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zmodload -ui complist
+
 ## キーバインド
 ### emacs
 bindkey -e
