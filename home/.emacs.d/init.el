@@ -173,6 +173,13 @@
        '(("\\.cmake$" . cmake-mode))
        '(("CMakeLists.txt" . cmake-mode))
        auto-mode-alist))
+(add-hook 'cmake-mode-hook
+          '(lambda ()
+             ;; インデントには tab を使う
+             (setq indent-tabs-mode t)
+             ;; インデント幅
+             (setq cmake-tab-width 4)
+             ))
 
 ;; bat-mode
 (setq auto-mode-alist
