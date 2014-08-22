@@ -111,6 +111,14 @@
                (set-fill-column 76)
                )))
 
+;; markdown-mode
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (append
+       '(("\\.markdown$" . markdown-mode))
+       '(("\\.md$" . markdown-mode))
+       auto-mode-alist))
+
 ;; c/c++-mode
 (add-hook 'c-mode-common-hook
           '(lambda ()
