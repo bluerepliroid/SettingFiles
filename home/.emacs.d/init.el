@@ -18,6 +18,8 @@
 (setq message-log-max nil)
 ;; バックアップファイルが生成されないようにする
 (setq backup-inhibited t)
+;; シンボリックリンク先のファイルがバージョン管理されている場合のオープン時のメッセージを省略
+(setq vc-follow-symlinks t)
 
 
 ; 言語の設定
