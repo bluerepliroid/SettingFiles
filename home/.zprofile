@@ -17,9 +17,9 @@ if ( which $editor >& /dev/null ) then
 fi
 end
 ## PATH
-export PATH=`brew --prefix coreutils`/libexec/gnubin:`brew --prefix`/bin:$PATH:$HOME/bin
+export PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH:$HOME/bin
 ## MANPATH
-export MANPATH=$MANPATH:/usr/man:/usr/local/man
+export MANPATH=`brew --prefix coreutils`/libexec/gnuman:$MANPATH
 
 sh -c "rm -f ~/.zsh_history.* 2> /dev/null"
 
