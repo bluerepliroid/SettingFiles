@@ -131,6 +131,11 @@
              ;; インデント幅
              (setq c-basic-offset 4)
              ))
+(add-hook 'c++-mode-hook
+          '(lambda ()
+             ;; namespace 中にインデントしない
+             (c-set-offset 'innamespace 0)
+             ))
 (setq auto-mode-alist
       (append
        '(("\\.c$" . c-mode))
