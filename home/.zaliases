@@ -16,4 +16,5 @@ if [ -d /usr/local/Cellar ]; then
   alias -g find=gfind
   alias -g sed=gsed
   alias -g objdump=gobjdump
+  alias -g gpg='gpg --pinentry-mode loopback'
 fi
