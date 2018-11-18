@@ -29,6 +29,9 @@ alias -g D='| diff'
 alias -g G="| grep"
 alias -g GT="| grep ' T '"
 
-alias -g find=gfind
-alias -g sed=gsed
-alias -g objdump=gobjdump
+if [ -d /usr/local/Cellar ]; then
+  alias -g find=gfind
+  alias -g sed=gsed
+  alias -g objdump=gobjdump
+fi
+
