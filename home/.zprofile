@@ -20,6 +20,9 @@ end
 export PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH:$HOME/bin
 ## MANPATH
 export MANPATH=`brew --prefix coreutils`/libexec/gnuman:$MANPATH
+## PYENV
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 sh -c "rm -f ~/.zsh_history.* 2> /dev/null"
 
