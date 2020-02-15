@@ -15,6 +15,5 @@ alias valgrind='valgrind -v --num-callers=100 --leak-check=yes --show-reachable=
 if [ -d /usr/local/Cellar ]; then
   alias -g find=gfind
   alias -g sed=gsed
-  alias -g objdump=gobjdump
   alias -g gpg='gpg --pinentry-mode loopback'
 fi

@@ -17,7 +17,7 @@ if ( which $editor >& /dev/null ) then
 fi
 end
 ## PATH
-export PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH:$HOME/bin
+export PATH=`brew --prefix coreutils`/libexec/gnubin:`brew --prefix binutils`/bin:$PATH:$HOME/bin
 ## MANPATH
 export MANPATH=`brew --prefix coreutils`/libexec/gnuman:$MANPATH
 ## PYENV
